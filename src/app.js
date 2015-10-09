@@ -2,27 +2,22 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { randomize } from './data/action-creators'
 import Number from './number'
-import List from './list'
+import Box from './box'
 
 class App extends Component {
   constructor( props) {
     super(props)
   }
 
-  handleClick(){
-    this.props.randomize(20);
-  }
-
   render() {
     console.time('render') //Sparar undan starttid för det man vill mäta tiden på
     let style={
-      fontFamily: 'arial'
+      fontFamily: 'arial',
+      position: 'relative'
     }
-    let tag =  <div style={style}>
-                  <h1>Slumpa nummer</h1>
-                  <button onClick={this.handleClick.bind(this)} >Slumpa!</button><br/>
-                  <List content={this.props.state.list} />
-                </div>
+    let tag =  <svg width={1000} height={1000} viewBox={'0 0 1000 1000'} style={style}>
+                  <Box width={80} height={80} x={100} y={200} content={'Hej'} />
+               </svg>
     console.timeEnd('render') //Skriver ut förfluten tid till konsollen (F12) för timern med samma namn
     return tag;
   }
