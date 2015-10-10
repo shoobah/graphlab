@@ -1,15 +1,13 @@
 //Skapar en div som är value bred med slumpad färg
 import React from 'react'
 
-function getRandomValue () {
-  return Math.round(Math.random() * 256)
-}
+let getRandomValue = () => (Math.round(Math.random() * 256))
 
-function randomColor () {
-  let r = getRandomValue()
-  let g = getRandomValue()
-  let b = getRandomValue()
-  return 'rgba(' + r + ', ' + g + ', ' + b + ', 1' + ')'
+let randomColor = () => {
+  return 'rgba(' +
+    getRandomValue() + ', ' +
+    getRandomValue() + ', ' +
+    getRandomValue() + ', 1' + ')'
 }
 
 export default ({value}) => {
@@ -20,9 +18,5 @@ export default ({value}) => {
     position: 'absolute',
     left: '100px'
   }
-  return (
-  <div style={style}>
-      &nbsp;
-    </div>
-  )
+  return <rect style={style} />
 }
