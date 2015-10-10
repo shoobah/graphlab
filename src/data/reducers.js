@@ -10,10 +10,10 @@ const initialState = {
   plugins:[
     {
       id:'b41b06bd-c4c3-dfa4-2699-a945a4445bc9',
-      x:0,
+      x:10,
       y:10,
-      width:20,
-      height:10,
+      width:10,
+      height:20,
       ins:['alpha', 'beta'],
       outs:['oner']
     },
@@ -21,8 +21,8 @@ const initialState = {
       id:'1f08b868-b539-a739-a259-463f95bcd21b',
       x:30,
       y:10,
-      width:20,
-      height:10,
+      width:10,
+      height:30,
       ins:['alpha','beta','theta'],
       outs:['oner','twoer']
     }

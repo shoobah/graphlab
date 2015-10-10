@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { randomize } from './data/action-creators'
-import Number from './number'
-import Box from './box'
-import Line from './line'
+import Board from './board'
 
 class App extends Component {
   constructor( props) {
@@ -14,11 +12,12 @@ class App extends Component {
     console.time('render')
     let style={
       fontFamily: 'arial',
-      position: 'relative'
+      position: 'relative',
+      backgroundColor:'#EEEEEE'
     }
-    let tag =  <svg width={1000} height={1000} viewBox={'0 0 1000 1000'} style={style}>
-                  <Box width={80} height={80} x={100} y={200} content={'Hej'} />
-                  <Line pathinfo={'M30 60 C 120 180, 180 180, 200 60'} color={'lime'} />
+    let g = this.props.grid
+    let tag =  <svg width={g.width * g.gridsize} height={g.height * g.gridsize} style={style}>
+                <Board scale={g.gridsize} plugins={this.props.plugins} connections={this.props.connections} />
                </svg>
     console.timeEnd('render')
     return tag;
@@ -27,7 +26,9 @@ class App extends Component {
 
 function mapStateToProps(state){
   return{
-    state: state
+    grid: state.grid,
+    plugins: state.plugins,
+    connections: state.connections
   }
 }
 
