@@ -17,7 +17,7 @@ class App extends Component {
     }
     let g = this.props.grid
     let tag =  <svg width={g.width * g.gridsize} height={g.height * g.gridsize} style={style}>
-                <Board scale={g.gridsize} plugins={this.props.plugins} connections={this.props.connections} />
+                <Board isOn={this.props.status.on} scale={g.gridsize} plugins={this.props.plugins} connections={this.props.connections} />
                </svg>
     console.timeEnd('render')
     return tag;
@@ -28,7 +28,8 @@ function mapStateToProps(state){
   return{
     grid: state.grid,
     plugins: state.plugins,
-    connections: state.connections
+    connections: state.connections,
+    status: state.status
   }
 }
 
