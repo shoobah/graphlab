@@ -90,5 +90,10 @@ export default {
         in:'theta'
       }
     }
-  ]
+  ],
+  mouse:{
+    x:0,
+    y:0,
+    button:''
+  }
 }

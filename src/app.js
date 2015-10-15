@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { randomize } from './data/action-creators'
+import { mouseClick, mouseMove } from './data/action-creators'
 import Board from './board'
 
 class App extends Component {
@@ -13,10 +13,15 @@ class App extends Component {
     let style={
       fontFamily: 'arial',
       position: 'relative',
-      backgroundColor:'#EEEEEE'
+      backgroundColor:'#EEEEEE',
+      MozUserSelect: '-moz-none',
+      KhtmlUserSelect: 'none',
+      WebkitUserSelect: 'none',
+      msUserSelect: 'none',
+      userSelect: 'none',
     }
     let g = this.props.grid
-    let tag =  <svg width={g.width * g.gridsize} height={g.height * g.gridsize} style={style}>
+    let tag =  <svg width={g.width * g.gridsize} height={g.height * g.gridsize} style={style} onMouseMove={this.props.move.bind(this)}>
                 <Board isOn={this.props.status.on} scale={g.gridsize} plugins={this.props.plugins} connections={this.props.connections} />
                </svg>
     console.timeEnd('render')
@@ -35,7 +40,8 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return {
-    randomize: (length) => dispatch(randomize(length))
+    click: (e) => dispatch(mouseClick(e)),
+    move: (e) => dispatch(mouseMove(e)),
   }
 }
 

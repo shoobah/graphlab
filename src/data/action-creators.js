@@ -1,9 +1,20 @@
-//Skapa en action, en action talar bara om att något hänt och skickar med vilken typ
-//av händelse det är och vlafria data.
-export const RANDOMIZE = 'RANDOMIZE' //Man brukar använda konstanter för att tala om typen på en action.
-export function randomize(length){
+export const MOUSECLICK = 'MOUSECLICK'
+export function mouseClick(e){
   return {
-    type: RANDOMIZE,
-    length //om posten i objektet har samma namn som den tilldelade variabeln behöver man inte speca det
+    type: MOUSECLICK,
+    x: e.clientX,
+    y: e.clientY,
+    button: e.buttons
   }
 }
+
+export const MOUSEMOVE = 'MOUSEMOVE'
+export function mouseMove(e){
+  return {
+    type: MOUSEMOVE,
+    x: e.clientX,
+    y: e.clientY,
+    button: e.buttons
+  }
+}
+
