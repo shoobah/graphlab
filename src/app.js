@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { mouseClick, mouseMove } from './data/action-creators'
 import Board from './board'
+import Statusbar from './statusbar'
 
 class App extends Component {
   constructor( props) {
@@ -22,6 +23,7 @@ class App extends Component {
     }
     let g = this.props.grid
     let tag =  <svg width={g.width * g.gridsize} height={g.height * g.gridsize} style={style} onMouseMove={this.props.move.bind(this)}>
+                <Statusbar text={'lkasj'} color={'lime'} height={30}/>
                 <Board isOn={this.props.status.on} scale={g.gridsize} plugins={this.props.plugins} connections={this.props.connections} />
                </svg>
     console.timeEnd('render')

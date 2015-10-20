@@ -18,3 +18,11 @@ export function mouseMove(e){
   }
 }
 
+export const CONTACTCLICK = 'CONTACTCLICK'
+export function contactClick(id, isOn){
+  return {
+    type: CONTACTCLICK,
+    id,
+    isOn
+  }
+}

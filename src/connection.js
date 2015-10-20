@@ -12,7 +12,7 @@ class Connection extends Component {
     // TODO:Get coords for the from and to connectors
     return (
       <svg>
-        <Connector start={{x: 10, y: 10}} end={{x: this.props.mouse.x, y: this.props.mouse.y}} color={'#6c1b5f'} />
+        <Connector start={{x: 30, y: 40}} end={{x: this.props.mouse.x, y: this.props.mouse.y}} color={'#6c1b5f'} />
       </svg>
     )
   }

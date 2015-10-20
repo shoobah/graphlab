@@ -19,6 +19,7 @@ function reducer (state = initialState, action) {
       }
       else return state
       break
+      
     case MOUSEMOVE:
       if(action.button === 1){
         return Object.assign({},state,{
@@ -32,6 +33,7 @@ function reducer (state = initialState, action) {
       }
       else return state
       break
+      
       default:
       return state
   }
