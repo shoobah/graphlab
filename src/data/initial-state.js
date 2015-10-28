@@ -10,6 +10,7 @@ export default {
   plugins:[
     {
       id:'b41b06bd-c4c3-dfa4-2699-a945a4445bc9',
+      typeId: 'b41b06bd-c4c3-dfa4-2699-a945a4445bc2',
       x:10,
       y:10,
       width:10,
@@ -26,12 +27,17 @@ export default {
       outs:[
         {
           name:'oner',
-          type:'number'
+          type:'number',
+          to:{
+            plugin:'1f08b868-b539-a739-a259-463f95bcd21b',
+            pin:'beta'
+          }
         }
       ]
     },
     {
       id:'1f08b868-b539-a739-a259-463f95bcd21b',
+      typeId: '1f08b868-b539-a739-a259-463f95bcd21c',      
       x:30,
       y:10,
       width:10,
@@ -65,6 +71,9 @@ export default {
           type:'string'
         },{
           name:'popp',
+          type:'string'
+        },{
+          name:'lampa',
           type:'string'
         }]
     }

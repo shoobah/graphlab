@@ -1,5 +1,5 @@
 import { createStore } from 'redux'
-import { MOUSECLICK, MOUSEMOVE } from './action-creators'
+import { MOUSECLICK, MOUSEMOVE, CONTACTCLICK } from './action-creators'
 import startState from './initial-state'
 
 const initialState = startState
@@ -34,8 +34,11 @@ function reducer (state = initialState, action) {
       else return state
       break
       
+      case CONTACTCLICK:
+        console.log('CONTACTCLICK', action.id)
+      
       default:
-      return state
+        return state
   }
 }
 

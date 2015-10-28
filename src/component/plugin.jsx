@@ -14,7 +14,8 @@ export default ({data, scale, isOn}) => {
         x={data.x * scale}
         y={data.y * scale}
         width={data.width * scale}
-        height={Math.max(data.ins.length, data.outs.length) * 2 * scale + 20} />
+        height={Math.max(data.ins.length, data.outs.length) * 2 * scale + 20} 
+      />
       {data.ins.map((item, index) => (
         <Contact type={'in'} key={index} info={{data:data, scale:scale, index:index, item:item}}/>
       ))}
@@ -24,3 +25,5 @@ export default ({data, scale, isOn}) => {
     </svg>
   )
 }
+
+//TODO: När man loopar igenom out pinnarna, kolla om den har en 'to' och rita en koppling dit.

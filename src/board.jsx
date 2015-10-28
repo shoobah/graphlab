@@ -1,5 +1,5 @@
 import React from 'react'
-import Plugin from './plugin'
+import Plugin from './component/plugin'
 import Connection from './connection'
 
 export default ({isOn, scale, plugins, connections}) => {

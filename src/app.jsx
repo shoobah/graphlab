@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { mouseClick, mouseMove } from './data/action-creators'
 import Board from './board'
-import Statusbar from './statusbar'
+import Statusbar from './chrome/statusbar'
 
 class App extends Component {
   constructor( props) {
