@@ -21,6 +21,10 @@ module.exports = {
       test: /\.js[x]?$/,
       loaders: ['react-hot', 'babel'],
       include: path.join(__dirname, 'src')
+    },
+    {
+        test: /\.svg$/,
+        loader: 'svg-inline'
     }]
   },
   resolve: {
