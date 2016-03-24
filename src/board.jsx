@@ -6,7 +6,6 @@ import Switch from './chrome/switch'
 export default ({isOn, scale, plugins, connections}) => {
   return (
     <svg>
-
       <Switch />
     </svg>
   )
